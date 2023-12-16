@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
-import { Test, TestingModule } from '@nestjs/testing';
-import { CreateUserDTO } from 'src/users/dto/create-user.dto';
-import { UpdateUserDTO } from 'src/users/dto/update-user.dto';
-import { User } from 'src/users/entities/user.entity';
-import { UsersController } from 'src/users/users.controller';
-import { UsersService } from 'src/users/users.service';
+import { TestingModule, Test } from '@nestjs/testing';
+import { CreateUserDTO } from '../../dto/create-user.dto';
+import { UpdateUserDTO } from '../../dto/update-user.dto';
+import { User } from '../../entities/user.entity';
+import { UsersController } from '../../users.controller';
+import { UsersService } from '../../users.service';
 
 describe('UsersController', () => {
   // In unit tests, always check the dependencies (constructor)

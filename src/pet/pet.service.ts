@@ -5,7 +5,9 @@ import { UpdatePetDto } from './dto/update-pet.dto';
 @Injectable()
 export class PetService {
   create(createPetDto: CreatePetDto) {
-    return 'This action adds a new pet';
+    return {
+      ...createPetDto,
+    };
   }
 
   findAll() {
@@ -17,7 +19,10 @@ export class PetService {
   }
 
   update(id: number, updatePetDto: UpdatePetDto) {
-    return `This action updates a #${id} pet`;
+    return {
+      id,
+      ...updatePetDto,
+    };
   }
 
   remove(id: number) {
