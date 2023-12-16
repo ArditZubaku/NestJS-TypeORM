@@ -16,7 +16,11 @@ export class UsersService {
   }
 
   findAll() {
-    return this.userRepository.find();
+    return this.userRepository.find({
+      relations: {
+        pets: true,
+      },
+    });
   }
 
   findOne(id: number): Promise<User> {

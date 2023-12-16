@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Pet } from 'src/pet/entities/pet.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 // User table
 @Entity()
@@ -11,9 +12,9 @@ export class User {
   @Column()
   name: string;
 
-  @Column()
-  test: string;
+  @OneToMany(() => Pet, (pet) => pet.owner)
+  pets: Pet[];
 
   @Column()
-  test2: string;
+  test: string;
 }
